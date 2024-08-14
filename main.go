@@ -17,6 +17,7 @@ const threshold = 180
 func main() {
 	http.HandleFunc("/upload", uploadHandler)
 	http.HandleFunc("/bg", bgHandler)
+	fmt.Println("Server started on :8080")
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -238,7 +239,7 @@ func removeBackground(img image.Image) image.Image {
 			r8 := uint8(r >> 8)
 			g8 := uint8(g >> 8)
 			b8 := uint8(b >> 8)
-			a8 := uint8(a >> 8)	
+			a8 := uint8(a >> 8)
 
 			if r8 > threshold && g8 > threshold && b8 > threshold && a8 > threshold {
 				newImg.Set(x, y, color.RGBA{0, 0, 0, 0})
