@@ -15,7 +15,7 @@ import (
 const threshold = 180
 
 func main() {
-	http.HandleFunc("/gonoice", uploadHandler)
+	http.HandleFunc("/gonoise", uploadHandler)
 	http.HandleFunc("/gobg", bgHandler)
 	fmt.Println("Server started on :8080")
 	http.ListenAndServe(":8080", nil)
