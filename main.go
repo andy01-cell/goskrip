@@ -19,7 +19,6 @@ func main() {
 	http.HandleFunc("/gobg", bgHandler)
 	fmt.Println("Server started on :8080")
 	http.ListenAndServe(":8080", nil)
-	http.ListenAndServe("0.0.0.0:8080", nil)
 }
 
 func uploadHandler(w http.ResponseWriter, r *http.Request) {
